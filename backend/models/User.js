@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-
-const UserSchema = new mongoose.Schema({
+const { Schema } = mongoose;
+const UserSchema = new Schema({
     name:{
         type:String,
         required: true
@@ -19,4 +19,6 @@ const UserSchema = new mongoose.Schema({
         default: Date.now     
     }
 })
-module.exports = mongoose.model('user',UserSchema);
+const User = mongoose.model('user',UserSchema);
+User.createIndexes();
+module.exports = User
