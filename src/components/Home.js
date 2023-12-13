@@ -2,10 +2,11 @@ import React from "react";
 import { useContext } from "react";
 import noteContext from "../context/notes/noteContext";
 import Notes from "./Notes";
-const Home = () => {
+const Home = (props) => {
+  const {showAlert} = props
   return (
     <div>
-      <Notes/>
+      <Notes showAlert={showAlert}/>
     </div>
   );
 };
